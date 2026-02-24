@@ -287,16 +287,36 @@ pnpm type-check
 
 本项目连接至 **YYC³ AI Family** 的数据库仓库：
 
-| 配置项 | 值 |
-|---------|-----|
-| **数据库名称** | `yyc3_aify` |
-| **数据库版本** | PostgreSQL 15 |
-| **默认端口** | `5433` |
-| **主机地址** | `localhost` / `192.168.3.45` |
-| **字符集** | `UTF8` |
-| **时区** | `Asia/Shanghai` |
+### 数据库信息
 
-数据库 Schema 请参考：[YYC³ AI Family 仓库](https://github.com/YYC-Cube/Family-π³)
+| 配置项 | 值 | 说明 |
+|---------|-----|------|
+| **数据库名称** | `yyc3_aify` | YYC³ AI Family 核心数据库 |
+| **数据库版本** | PostgreSQL 15 | 最新稳定版本 |
+| **默认端口** | `5433` | 避免与系统默认 5432 冲突 |
+| **主机地址** | `localhost` / `192.168.3.45` | 本地 / NAS 访问 |
+| **字符集** | `UTF8` | 支持中文存储 |
+| **时区** | `Asia/Shanghai` | 中国标准时间 |
+
+### 仓库链接
+
+| 仓库 | 链接 | 说明 |
+|------|------|------|
+| **YYC³ AI Family** | [https://github.com/YYC-Cube/Family-π³](https://github.com/YYC-Cube/Family-π³) | 主项目仓库，包含完整的数据库 Schema 和配置 |
+| **YYC³ Data Dashboard** | [https://github.com/YYC-Cube/YYC-Data-Dashboard-Design](https://github.com/YYC-Cube/YYC-Data-Dashboard-Design) | 本项目仓库 |
+
+### 数据库结构
+
+数据库包含以下核心表：
+
+- `users` - 用户信息表
+- `audit_logs` - 操作审计日志表
+- `node_status` - 推理节点状态表
+- `performance_metrics` - 性能指标表
+- `system_settings` - 系统配置表
+- `ai_prompts` - AI 提示词表
+
+完整的数据库 Schema 和迁移脚本请参考：[YYC³ AI Family 数据库文档](https://github.com/YYC-Cube/Family-π³/tree/main/database)
 
 ---
 
