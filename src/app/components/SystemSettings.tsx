@@ -1,15 +1,35 @@
-import React, { useState } from "react";
 import {
-  Settings, Server, Database, Shield, Bell, Cpu,
-  ChevronRight, Save, RotateCcw, Check,
-  Monitor, Network, Zap, Key, Layers, Wifi,
-  Globe, GitBranch, Terminal, Code, FileJson,
-  Download, Upload, Trash2, Plus, Edit2, Copy, Eye, EyeOff,
-  RefreshCw, HardDrive, Clock, AlertTriangle, Sliders
+    Activity,
+    AlertTriangle,
+    Bell,
+    ChevronRight,
+    Clock,
+    Code,
+    Cpu,
+    Database,
+    Download,
+    Edit2,
+    Eye, EyeOff,
+    Globe,
+    Key, Layers,
+    Monitor, Network,
+    Plus,
+    RefreshCw,
+    RotateCcw,
+    Save,
+    Server,
+    Settings,
+    Shield,
+    Sliders,
+    Terminal,
+    Trash2,
+    Upload,
+    Wifi
 } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 import { GlassCard } from "./GlassCard";
 import { NetworkConfig } from "./NetworkConfig";
-import { toast } from "sonner";
 
 // ============================================================
 // Settings sections config
@@ -27,6 +47,7 @@ const settingsSections = [
   { id: "security", label: "安全设置", icon: Shield },
   { id: "notification", label: "通知配置", icon: Bell },
   { id: "env", label: "环境变量", icon: Terminal },
+  { id: "services", label: "本地服务管理", icon: Activity },
   { id: "advanced", label: "高级设置", icon: Code },
 ];
 
@@ -840,6 +861,9 @@ export function SystemSettings() {
             </div>
           </div>
         );
+
+      case "services":
+        return <LocalServiceManager />;
 
       case "advanced":
         return (
