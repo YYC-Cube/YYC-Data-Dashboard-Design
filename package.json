@@ -10,7 +10,18 @@
     "type-check": "tsc --noEmit",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "deploy": "./scripts/deploy.sh",
+    "deploy:dev": "./scripts/deploy.sh dev",
+    "deploy:prod": "./scripts/deploy.sh prod",
+    "deploy:test": "./scripts/deploy.sh test",
+    "deploy:clean": "./scripts/deploy.sh clean",
+    "ws-server": "tsx server/websocket-server.ts",
+    "backup": "./scripts/backup.sh",
+    "backup:all": "./scripts/backup.sh all",
+    "backup:db": "./scripts/backup.sh db",
+    "backup:config": "./scripts/backup.sh config",
+    "backup:list": "./scripts/backup.sh list"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",
